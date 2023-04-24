@@ -5,7 +5,7 @@ pragma solidity 0.8.9;
 import '@openzeppelin/contracts/utils/Context.sol';
 import '@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol';
 
-contract LaunchPad is Context, IERC20Metadata {
+contract LaunchPadToken is Context, IERC20Metadata {
   mapping(address => uint256) private _balances;
 
   mapping(address => mapping(address => uint256)) private _allowances;
@@ -15,7 +15,7 @@ contract LaunchPad is Context, IERC20Metadata {
   string private _name;
   string private _symbol;
   uint8 private constant _decimals = 18;
-  uint256 public constant hardCap = 1_000_000_000_000 * (10 ** _decimals); //1 Trillion
+  uint256 public constant hardCap = 1_000_000_000 * (10 ** _decimals); //1 Billion
 
   constructor(string memory name_, string memory symbol_, address _to) {
     _name = name_;
