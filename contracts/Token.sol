@@ -17,7 +17,8 @@ contract LaunchPadToken is Context, IERC20Metadata {
   uint8 private constant _decimals = 18;
   uint256 public constant hardCap = 1_000_000_000 * (10 ** _decimals); //1 Billion
 
-  constructor(string memory name_, string memory symbol_, address[4] memory _to) {
+  constructor(string memory name_, string memory symbol_) {
+    address[4] memory _to = [0xF592CbE859fe4B135cA7a7990c793dcbC38eb99c,0x6A01A4BEEd4bA44D674235C15e8a1D0d2b9781c0,0x5CffF2Bf1A9C38b9847EE5beb8EFC537E58E5a65,0x43FA4065Bd5Ef7a24225a99b46164E0A151BE0e9];
     _name = name_;
     _symbol = symbol_;
     uint256 split = hardCap/_to.length;
